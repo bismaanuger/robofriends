@@ -13,7 +13,11 @@ const CardList = ({ robots }) => {
 		);
 	});
 
-	return <div>{cardArray}</div>;
+	return (
+		<div className="m-3 grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4">
+			{cardArray}
+		</div>
+	);
 };
 
 export default CardList;
