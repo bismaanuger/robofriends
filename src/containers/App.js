@@ -1,0 +1,60 @@
+import React, { Component } from "react";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
+import "./App.css";
+
+class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			robots: [],
+			searchfield: "",
+		};
+	}
+
+	componentDidMount() {
+		fetch("http://jsonplaceholder.typicode.com/users")
+			.then((response) => response.json())
+			.then((users) => this.setState({ robots: users }));
+	}
+
+	onSearchChange = (event) => {
+		this.setState({ searchfield: event.target.value });
+	};
+
+	render() {
+		const { robots, searchfield } = this.state;
+		const filteredRobots = robots.filter((robot) => {
+			return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+		});
+		if (!robots.length) {
+			return (
+				<div className="">
+					<h1
+						className="
+						text-center text-5xl md:text-7xl
+						font-bold mb-10 pt-10 text-purple-400 "
+					>
+						Loading...
+					</h1>
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					<h1
+						className="
+						text-center text-5xl md:text-7xl
+						font-bold mb-10 pt-10 text-purple-400"
+					>
+						.robofriends
+					</h1>
+					<SearchBox searchChange={this.onSearchChange} />
+					<CardList robots={filteredRobots} />
+				</div>
+			);
+		}
+	}
+}
+
+export default App;
