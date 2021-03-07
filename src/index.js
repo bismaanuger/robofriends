@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import CardList from "./CardList";
+import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import { robots } from "./robots";
+import "./index2.css";
 
-ReactDOM.render(<CardList robots={robots} />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 serviceWorkerRegistration.unregister();
 
