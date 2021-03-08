@@ -28,35 +28,22 @@ class App extends Component {
 		const filteredRobots = robots.filter((robot) => {
 			return robot.name.toLowerCase().includes(searchfield.toLowerCase());
 		});
-		if (!robots.length) {
-			return (
-				<div className="">
-					<h1
-						className="
-						text-center text-5xl md:text-7xl
-						font-bold mb-10 pt-10 text-purple-400 "
-					>
-						Loading...
-					</h1>
-				</div>
-			);
-		} else {
-			return (
-				<div>
-					<h1
-						className="
+
+		return (
+			<div>
+				<h1
+					className="
 						text-center text-5xl md:text-7xl
 						font-bold mb-10 pt-10 text-purple-400"
-					>
-						.robofriends
-					</h1>
-					<SearchBox onSearchChange={this.onSearchChange} />
-					<ErrorBoundry>
-						<CardList robots={filteredRobots} />
-					</ErrorBoundry>
-				</div>
-			);
-		}
+				>
+					.robofriends
+				</h1>
+				<SearchBox onSearchChange={this.onSearchChange} />
+				<ErrorBoundry>
+					<CardList robots={filteredRobots} />
+				</ErrorBoundry>
+			</div>
+		);
 	}
 }
 
