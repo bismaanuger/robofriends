@@ -49,7 +49,7 @@ class App extends Component {
 					>
 						.robofriends
 					</h1>
-					<SearchBox searchChange={this.onSearchChange} />
+					<SearchBox onSearchChange={this.onSearchChange} />
 					<CardList robots={filteredRobots} />
 				</div>
 			);
