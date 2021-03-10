@@ -16,7 +16,7 @@ const CardList = ({ robots }) => {
 	return (
 		<div
 			className="
-			grid gap-4 pb-3 mb-0 mt-3 mx-3
+			grid justify-items-center gap-4 pb-3 mb-0 mt-3 mx-3
 			2xl:mx-52 2xl:grid-cols-3
 			xl:mx-28 xl:grid-cols-3
 			lg:mx-10 lg:grid-cols-3
